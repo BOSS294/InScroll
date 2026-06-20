@@ -1,0 +1,81 @@
+{
+  "camera_index": 0,
+  "camera_width": 1080,
+  "camera_height": 800,
+  "preview_flip": true,
+  "detection": {
+    "max_num_hands": 2,
+    "model_complexity": 1,
+    "min_detection_confidence": 0.6904494382022471,
+    "min_tracking_confidence": 0.6674157303370787
+  },
+  "gesture": {
+    "stable_frames": 3,
+    "cooldown_ms": 450,
+    "swipe_min_dx": 0.1274032459425718,
+    "swipe_min_dy": 0.11179775280898877,
+    "swipe_min_duration_ms": 80,
+    "swipe_max_duration_ms": 280,
+    "pinch_threshold": 0.042,
+    "open_palm_min_extended": 4
+  },
+  "bindings": {
+    "thumb_up": {
+      "enabled": false,
+      "type": "key",
+      "value": "space"
+    },
+    "thumb_down": {
+      "enabled": false,
+      "type": "key",
+      "value": "backspace"
+    },
+    "fist": {
+      "enabled": true,
+      "type": "key",
+      "value": "space"
+    },
+    "open_palm": {
+      "enabled": true,
+      "type": "key",
+      "value": "up"
+    },
+    "swipe_up": {
+      "enabled": true,
+      "type": "key",
+      "value": "up"
+    },
+    "swipe_down": {
+      "enabled": true,
+      "type": "key",
+      "value": "down"
+    },
+    "swipe_left": {
+      "enabled": true,
+      "type": "hotkey",
+      "value": "win + left"
+    },
+    "swipe_right": {
+      "enabled": false,
+      "type": "key",
+      "value": "right"
+    },
+    "pinch": {
+      "enabled": false,
+      "type": "key",
+      "value": "enter"
+    }
+  },
+  "calibration": {
+    "neutral_center": {
+      "x": 0.5513,
+      "y": 0.4489
+    },
+    "swipe_scale": {
+      "x": 1.0,
+      "y": 1.0
+    },
+    "recent_center_samples": [],
+    "recent_swipe_samples": []
+  }
+}

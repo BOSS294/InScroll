@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InScroll — Gesture Control Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">IS</div>
+        <div>
+          <div class="brand-name">InScroll</div>
+          <div class="brand-sub">Hand Gesture Control Studio</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Mode</div>
+        <div class="mode-single">
+          <div class="mode-chip active">Camera Preview</div>
+        </div>
+        <p class="hint">The live camera preview always stays on. MediaPipe overlays a green hand skeleton on top of the feed.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Hand Engine</div>
+        <div class="stat-list">
+          <div><span>Hands</span><strong id="statHands">0</strong></div>
+          <div><span>Last Gesture</span><strong id="statGesture">—</strong></div>
+          <div><span>Status</span><strong id="statStatus">Idle</strong></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Bindings</div>
+        <div id="bindingsList" class="bindings-list"></div>
+        <button id="saveBtn" class="primary-btn mt-3">Save Bindings</button>
+        <button id="resetBtn" class="ghost-btn mt-2">Reset Defaults</button>
+      </div>
+    </aside>
+
+    <main class="main-stage">
+      <header class="topbar">
+        <div>
+          <h1>Gesture-to-Key Automation</h1>
+          <p>Track left and right hands, detect gesture events, and trigger keyboard actions locally.</p>
+        </div>
+        <div class="topbar-pill" id="cameraState">Camera not started</div>
+      </header>
+
+      <section class="workspace">
+        <div class="viewer-card">
+          <div class="viewer-header">
+            <div>
+              <div class="viewer-title">Live Hand Tracker</div>
+              <div class="viewer-sub">MediaPipe Hands + green skeleton overlay</div>
+            </div>
+            <div class="viewer-badges">
+              <span class="badge">Left + Right Hand</span>
+              <span class="badge">Finger Tracking</span>
+              <span class="badge">Realtime Gestures</span>
+            </div>
+          </div>
+
+          <div class="viewer-stage" id="viewerStage">
+            <video id="video" playsinline muted></video>
+            <canvas id="output"></canvas>
+            <div id="emptyOverlay" class="empty-overlay">
+              <div class="empty-card">
+                <div class="empty-title">Start Camera</div>
+                <p>Click the button below to open the webcam and begin gesture tracking.</p>
+                <button id="startBtn" class="primary-btn mt-4">Enable Camera</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="viewer-footer">
+            <button id="startBtn2" class="primary-btn">Enable Camera</button>
+            <div class="viewer-footer-note">Skeleton overlay is always enabled for detection clarity.</div>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="panel big-panel">
+            <div class="panel-title">Gesture Activity</div>
+            <div id="eventFeed" class="event-feed"></div>
+          </div>
+
+          <div class="panel big-panel">
+            <div class="panel-title">Technical Notes</div>
+            <ul class="notes">
+              <li>Browser captures the webcam and runs MediaPipe Hands directly.</li>
+              <li>Python backend executes key presses and stores bindings.</li>
+              <li>Green connectors and landmarks are drawn for a clean technical look.</li>
+              <li>Cooldowns prevent repeated triggers on the same gesture.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

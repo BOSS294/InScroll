@@ -1,0 +1,57 @@
+{
+  "mode": "preview",
+  "hands": {
+    "maxNumHands": 2,
+    "modelComplexity": 1,
+    "minDetectionConfidence": 0.75,
+    "minTrackingConfidence": 0.65
+  },
+  "cooldownMs": 700,
+  "bindings": {
+    "thumb_up": {
+      "enabled": true,
+      "type": "key",
+      "value": "space"
+    },
+    "thumb_down": {
+      "enabled": false,
+      "type": "key",
+      "value": "backspace"
+    },
+    "fist": {
+      "enabled": true,
+      "type": "key",
+      "value": "f"
+    },
+    "open_palm": {
+      "enabled": false,
+      "type": "key",
+      "value": "p"
+    },
+    "swipe_up": {
+      "enabled": true,
+      "type": "key",
+      "value": "up"
+    },
+    "swipe_down": {
+      "enabled": true,
+      "type": "key",
+      "value": "down"
+    },
+    "swipe_left": {
+      "enabled": false,
+      "type": "key",
+      "value": "left"
+    },
+    "swipe_right": {
+      "enabled": false,
+      "type": "key",
+      "value": "right"
+    },
+    "pinch": {
+      "enabled": false,
+      "type": "key",
+      "value": "enter"
+    }
+  }
+}
