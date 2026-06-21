@@ -17,9 +17,6 @@
 ![Status](https://img.shields.io/badge/Status-Active%20Development-brightgreen)
 
 <!-- Replace BOSS294/InScroll with your GitHub repository path to activate these repository badges -->
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/BOSS294/InScroll/ci.yml?branch=main)](https://github.com/BOSS294/InScrollactions)
-[![Release](https://img.shields.io/github/v/release/BOSS294/InScroll)](https://github.com/BOSS294/InScrollreleases)
-[![Downloads](https://img.shields.io/github/downloads/BOSS294/InScroll/total)](https://github.com/BOSS294/InScrollreleases)
 [![Contributors](https://img.shields.io/github/contributors/BOSS294/InScroll)](https://github.com/BOSS294/InScrollgraphs/contributors)
 [![Code size](https://img.shields.io/github/repo-size/BOSS294/InScroll)](https://github.com/BOSS294/InScroll)
 [![Last commit](https://img.shields.io/github/last-commit/BOSS294/InScroll)](https://github.com/BOSS294/InScrollcommits/main)
